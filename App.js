@@ -15,7 +15,7 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator tabBarOptions={{ showLabel: false, activeTintColor: '#ffc107'}}>
         <Tab.Screen name="All" component={AllScreen}
           options={{
             tabBarIcon: (props) => (
