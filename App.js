@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Icon } from 'react-native-elements'
 import AllScreen from './screens/AllScreen';
 import BusinessScreen from './screens/BusinessScreen';
 import HealthScreen from './screens/HealthScreen';
@@ -15,11 +16,36 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="All" component={AllScreen} />
-        <Tab.Screen name="Business" component={BusinessScreen} />
-        <Tab.Screen name="Health" component={HealthScreen} />
-        <Tab.Screen name="Sports" component={SportsScreen} />
-        <Tab.Screen name="Tech" component={TechScreen} />
+        <Tab.Screen name="All" component={AllScreen}
+          options={{
+            tabBarIcon: (props) => (
+              <Icon type='feather' name='home' color={props.color} />
+            )
+          }} />
+        <Tab.Screen name="Business" component={BusinessScreen}
+          options={{
+            tabBarIcon: (props) => (
+              <Icon type='feather' name='dollar-sign' color={props.color} />
+            )
+          }} />
+        <Tab.Screen name="Health" component={HealthScreen}
+          options={{
+            tabBarIcon: (props) => (
+              <Icon type='feather' name='heart' color={props.color} />
+            )
+          }} />
+        <Tab.Screen name="Sports" component={SportsScreen}
+          options={{
+            tabBarIcon: (props) => (
+              <Icon type='ionicon' name='tennisball-outline' color={props.color} />
+            )
+          }} />
+        <Tab.Screen name="Tech" component={TechScreen}
+          options={{
+            tabBarIcon: (props) => (
+              <Icon type='ionicon' name='hardware-chip-outline' color={props.color} />
+            )
+          }} />
       </Tab.Navigator>
     </NavigationContainer>
   );
