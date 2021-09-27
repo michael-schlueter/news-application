@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Icon } from 'react-native-elements'
-import AllScreen from './screens/AllScreen';
+import HomeScreen from './screens/HomeScreen';
 import BusinessScreen from './screens/BusinessScreen';
 import HealthScreen from './screens/HealthScreen';
 import SportsScreen from './screens/SportsScreen';
@@ -16,7 +16,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator tabBarOptions={{ showLabel: false, activeTintColor: '#ffc107'}}>
-        <Tab.Screen name="All" component={AllScreen}
+        <Tab.Screen name="Home" component={HomeScreen}
           options={{
             tabBarIcon: (props) => (
               <Icon type='feather' name='home' color={props.color} />
