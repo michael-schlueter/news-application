@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { flex } from 'styled-system';
-import { Divider, NativeBaseProvider } from 'native-base';
+import { Divider, NativeBaseProvider, FlatList, ScrollView, Image, Spinner } from 'native-base';
+import { services } from '../services/services';
 
 export default function HomeScreen() {
+
+    const [newsData, setNewsData] = useState([]);
+    
+    useEffect(() => {
+        services('general')
+            .then(data => {
+                setNewsData(data)
+            })
+            .catch(error => {
+                alert(error)
+            })
+    }, []);
+
     return (
         <NativeBaseProvider>
             <View>
