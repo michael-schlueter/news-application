@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { flex } from 'styled-system';
 import { Divider, NativeBaseProvider, FlatList, ScrollView, Image, Spinner } from 'native-base';
 import { services } from '../services/services';
+import moment from 'moment';
 
 export default function HomeScreen() {
 
@@ -30,7 +31,7 @@ export default function HomeScreen() {
                                     {item.title}
                                 </Text>
                                 <Text style={styles.date}>
-                                    {item.publishedAt}
+                                    {moment(item.publishedAt).format('LLL')}
                                 </Text>
                                 <Text style={styles.newsDescription}>
                                     {item.description}
