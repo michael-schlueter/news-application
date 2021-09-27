@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { flex } from 'styled-system';
 import { Divider, NativeBaseProvider, FlatList, ScrollView, Image, Spinner } from 'native-base';
 import { services } from '../services/services';
 import moment from 'moment';
