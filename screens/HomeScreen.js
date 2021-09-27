@@ -20,51 +20,27 @@ export default function HomeScreen() {
 
     return (
         <NativeBaseProvider>
-            <View>
-                <View style={styles.container}>
-                    <Text style={styles.text}>Home</Text>
-                </View>
-                <View>
-                    <View style={styles.flex}>
-                        <Text style={styles.title}>Title</Text>
-                        <Text style={styles.date}>Date</Text>
-                    </View>
-                    <View style={styles.description}>
-                        <Text style={styles.title}>Description</Text>
-                    </View>
-                </View>
-                <Divider my={2} bg="#e0e0e0" />
-                <View>
-                    <View style={styles.flex}>
-                        <Text style={styles.title}>Title</Text>
-                        <Text style={styles.date}>Date</Text>
-                    </View>
-                    <View style={styles.description}>
-                        <Text style={styles.title}>Description</Text>
-                    </View>
-                </View>
-                <Divider my={2} bg="#e0e0e0" />
-                <View>
-                    <View style={styles.flex}>
-                        <Text style={styles.title}>Title</Text>
-                        <Text style={styles.date}>Date</Text>
-                    </View>
-                    <View style={styles.description}>
-                        <Text style={styles.title}>Description</Text>
-                    </View>
-                </View>
-                <Divider my={2} bg="#e0e0e0" />
-                <View>
-                    <View style={styles.flex}>
-                        <Text style={styles.title}>Title</Text>
-                        <Text style={styles.date}>Date</Text>
-                    </View>
-                    <View style={styles.description}>
-                        <Text style={styles.title}>Description</Text>
-                    </View>
-                </View>
-                <Divider my={2} bg="#e0e0e0" />
-            </View>
+            <ScrollView height={850}>
+                <FlatList
+                    data={newsData}
+                    renderItem={({ item }) => (
+                       <View>
+                           <View>
+                                <Text>
+                                    {item.title}
+                                </Text>
+                                <Text>
+                                    {item.publishedAt}
+                                </Text>
+                                <Text>
+                                    {item.description}
+                                </Text>
+                            </View>
+                       </View> 
+                    )}
+                    keyExtractor={(item) => item.id}
+                />
+            </ScrollView>
         </NativeBaseProvider>
     )
 }
