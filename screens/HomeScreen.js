@@ -25,14 +25,14 @@ export default function HomeScreen() {
                     data={newsData}
                     renderItem={({ item }) => (
                        <View>
-                           <View>
-                                <Text>
+                           <View style={styles.newsContainer}>
+                                <Text style={styles.title}>
                                     {item.title}
                                 </Text>
-                                <Text>
+                                <Text style={styles.date}>
                                     {item.publishedAt}
                                 </Text>
-                                <Text>
+                                <Text style={styles.newsDescription}>
                                     {item.description}
                                 </Text>
                             </View>
@@ -46,28 +46,19 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        textAlign: 'center',
+    newsContainer: {
         padding: 10,
-        backgroundColor: '#e0e0e0',
-        border: '1px solid #bdbdbd',
-    },
-    text: {
-        fontSize: 24,
-    },
-    flex: {
-        display: flex,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        padding: 20,
     },
     title: {
-        fontSize: 20,
+        fontSize: 18,
+        marginTop: 10,
+        fontWeight: "600",
+    },
+    newsDescription: {
+        fontSize: 16,
+        marginTop: 10,
     },
     date: {
-        fontSize: 20,
+        fontSize: 14,
     },
-    description: {
-        padding: 20,
-    }
 });
