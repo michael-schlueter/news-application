@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { NativeBaseProvider, FlatList, ScrollView, Divider, Image, Spinner } from 'native-base';
+import { NativeBaseProvider, FlatList, ScrollView, Image, Spinner } from 'native-base';
+import { Divider } from 'react-native-elements';
 import { services } from '../services/services';
 import moment from 'moment';
 
@@ -48,7 +49,7 @@ export default function TechScreen() {
                                     Weiterlesen
                                 </Text>
                             </View>
-                            <Divider my={2} bg="#e0e0e0" />
+                            <Divider orientation="horizontal" />
                        </View> 
                     )}
                     keyExtractor={(item) => item.id}
