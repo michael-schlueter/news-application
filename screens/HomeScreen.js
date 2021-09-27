@@ -22,6 +22,7 @@ export default function HomeScreen() {
     return (
         <NativeBaseProvider>
             <ScrollView height={850}>
+                {newsData.length > 1 ? (
                 <FlatList
                     data={newsData}
                     renderItem={({ item }) => (
@@ -50,6 +51,11 @@ export default function HomeScreen() {
                     )}
                     keyExtractor={(item) => item.id}
                 />
+                ) : (
+                    <View style={styles.spinner}>
+                        <Spinner color="danger.400" />
+                    </View>
+                )}
             </ScrollView>
         </NativeBaseProvider>
     )
@@ -71,4 +77,10 @@ const styles = StyleSheet.create({
     date: {
         fontSize: 14,
     },
+    spinner: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 400,
+    }
 });
