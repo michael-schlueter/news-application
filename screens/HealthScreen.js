@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { NativeBaseProvider, FlatList, ScrollView, Image, Spinner } from 'native-base';
 import { Divider } from 'react-native-elements';
 import { services } from '../services/services';
@@ -45,9 +45,11 @@ export default function HealthScreen() {
                                 <Text style={styles.newsDescription}>
                                     {item.description}
                                 </Text>
-                                <Text onPress={() => Linking.openURL(item.url)} style={styles.newsLink}>
-                                    Weiterlesen
-                                </Text>
+                                <TouchableOpacity onPress={() => Linking.openURL(item.url)}>
+                                    <Text style={styles.newsLink}>
+                                        Weiterlesen
+                                    </Text>
+                                </TouchableOpacity>
                             </View>
                             <Divider orientation="horizontal" />
                        </View> 

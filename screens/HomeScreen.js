@@ -45,9 +45,11 @@ export default function HomeScreen() {
                                 <Text style={styles.newsDescription}>
                                     {item.description}
                                 </Text>
-                                <Text onPress={() => Linking.openURL(item.url)} style={styles.newsLink}>
-                                    Weiterlesen
-                                </Text>
+                                <TouchableOpacity onPress={() => Linking.openURL(item.url)}>
+                                    <Text style={styles.newsLink}>
+                                        Weiterlesen
+                                    </Text>
+                                </TouchableOpacity>
                             </View>
                             <Divider orientation="horizontal" />
                        </View> 
