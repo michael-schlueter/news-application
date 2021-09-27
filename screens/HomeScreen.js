@@ -9,6 +9,7 @@ export default function HomeScreen() {
 
     const [newsData, setNewsData] = useState([]);
     
+    // Storing the data from the News API into state
     useEffect(() => {
         services('general')
             .then(data => {
@@ -22,7 +23,9 @@ export default function HomeScreen() {
     return (
         <NativeBaseProvider>
             <ScrollView height={850}>
+                {/* Display loading spinner or list of articles depending on status of the API call */}
                 {newsData.length > 1 ? (
+                // Rendering the requested articles from the News API
                 <FlatList
                     data={newsData}
                     renderItem={({ item }) => (
@@ -40,6 +43,7 @@ export default function HomeScreen() {
                                     {item.title}
                                 </Text>
                                 <Text style={styles.date}>
+                                    {/* Formatting the date */}
                                     {moment(item.publishedAt).format('LLL')} 
                                 </Text>
                                 <Text style={styles.newsDescription}>
@@ -54,6 +58,7 @@ export default function HomeScreen() {
                             <Divider orientation="horizontal" />
                        </View> 
                     )}
+                    // Adding a key to every rendered article
                     keyExtractor={(item) => item.id}
                 />
                 ) : (

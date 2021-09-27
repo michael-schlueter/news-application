@@ -9,6 +9,7 @@ import HealthScreen from './screens/HealthScreen';
 import SportsScreen from './screens/SportsScreen';
 import TechScreen from './screens/TechScreen';
 
+// Creating navigation bar
 const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator tabBarOptions={{ showLabel: false, activeTintColor: '#ffc107'}}>
         <Tab.Screen name="Home" component={HomeScreen}
+          // Adding icon
           options={{
             tabBarIcon: (props) => (
               <Icon type='material' name='home' color={props.color} />
