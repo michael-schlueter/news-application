@@ -27,6 +27,14 @@ export default function HomeScreen() {
                     renderItem={({ item }) => (
                        <View>
                            <View style={styles.newsContainer}>
+                               <Image
+                                width={550}
+                                height={250}
+                                resizeMode={"cover"}
+                                source={{
+                                    uri: item.urlToImage,
+                                }}
+                                alt="Alternate Text" />
                                 <Text style={styles.title}>
                                     {item.title}
                                 </Text>
@@ -37,6 +45,7 @@ export default function HomeScreen() {
                                     {item.description}
                                 </Text>
                             </View>
+                            <Divider my={2} bg="#e0e0e0" />
                        </View> 
                     )}
                     keyExtractor={(item) => item.id}
