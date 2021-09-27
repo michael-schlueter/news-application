@@ -34,7 +34,7 @@ export default function TechScreen() {
                                 source={{
                                     uri: item.urlToImage,
                                 }}
-                                alt="Alternate Text" />
+                                />
                                 <Text style={styles.title}>
                                     {item.title}
                                 </Text>
@@ -43,6 +43,9 @@ export default function TechScreen() {
                                 </Text>
                                 <Text style={styles.newsDescription}>
                                     {item.description}
+                                </Text>
+                                <Text onPress={() => Linking.openURL(item.url)} style={styles.newsLink}>
+                                    Weiterlesen
                                 </Text>
                             </View>
                             <Divider my={2} bg="#e0e0e0" />
@@ -81,5 +84,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         height: 400,
-    }
+    },
+    newsLink: {
+        fontSize: 16,
+        marginTop: 10,
+        color: "blue",
+    },
 });

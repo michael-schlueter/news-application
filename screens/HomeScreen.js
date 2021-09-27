@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Linking, TouchableOpacity } from 'react-native';
 import { Divider, NativeBaseProvider, FlatList, ScrollView, Image, Spinner } from 'native-base';
 import { services } from '../services/services';
 import moment from 'moment';
@@ -34,15 +34,18 @@ export default function HomeScreen() {
                                 source={{
                                     uri: item.urlToImage,
                                 }}
-                                alt="Alternate Text" />
+                                />
                                 <Text style={styles.title}>
                                     {item.title}
                                 </Text>
                                 <Text style={styles.date}>
-                                    {moment(item.publishedAt).format('LLL')}
+                                    {moment(item.publishedAt).format('LLL')} 
                                 </Text>
                                 <Text style={styles.newsDescription}>
                                     {item.description}
+                                </Text>
+                                <Text onPress={() => Linking.openURL(item.url)} style={styles.newsLink}>
+                                    Weiterlesen
                                 </Text>
                             </View>
                             <Divider my={2} bg="#e0e0e0" />
@@ -81,5 +84,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         height: 400,
-    }
+    },
+    newsLink: {
+        fontSize: 16,
+        marginTop: 10,
+        color: "blue",
+    },
 });
