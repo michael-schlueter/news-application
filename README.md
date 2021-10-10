@@ -28,10 +28,11 @@ The dependencies which are necessary to run this app can be found in the package
 
 1. Get a free API key at https://newsapi.org/
 2. Clone the repo
-3. Install NPM packages 
+3. Install NPM packages
 ```
 npm install
 ```
+in the terminal in the project folder
 4. Enter your API key in /config/config.js
 ```
 export const API_KEY = `Enter your API key here`;
